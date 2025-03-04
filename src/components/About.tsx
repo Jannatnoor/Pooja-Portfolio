@@ -1,6 +1,7 @@
 import React from 'react';
 import { SectionProps } from '../types/Section.types';
 
+
 const About: React.FC<SectionProps> = ({ setActiveSection, darkMode }) => {
   return (
     <section

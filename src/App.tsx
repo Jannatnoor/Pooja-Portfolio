@@ -5,6 +5,7 @@ import About from './components/About';
 import Skills from './components/Skills';
 import Work from './components/Work';
 import Projects from './components/Projects';
+import FoodBusiness from './components/FoodBusiness';
 import Contact from './components/Contact';
 import { Section } from './types/Section.types';
 
@@ -92,6 +93,7 @@ function App() {
           <Skills setActiveSection={setActiveSection} darkMode={darkMode} />
           <Work setActiveSection={setActiveSection} darkMode={darkMode} />
           <Projects setActiveSection={setActiveSection} darkMode={darkMode} />
+          <FoodBusiness setActiveSection={setActiveSection} darkMode={darkMode} />
           <Contact setActiveSection={setActiveSection} darkMode={darkMode} />
         </main>
 

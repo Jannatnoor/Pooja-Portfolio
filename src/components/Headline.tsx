@@ -77,13 +77,19 @@ const Headline: React.FC<SectionProps> = ({ setActiveSection, darkMode }) => {
         </div>
 
         {/* Right Side with Image */}
-        <div className="w-1/2 flex items-center justify-center">
+        <div className="w-full md:w-1/2 flex items-center justify-center mt-10 md:mt-0 pb-10 md:pb-0">
+        <div className="w-full max-w-md lg:max-w-lg xl:max-w-xl">
+           <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 mx-auto">
+              
           <img 
             src={profileImage} 
             alt="Profile" 
-            className="max-h-[100%] object-contain z-10" 
+            className="relative z-10 w-full h-full object-cover rounded-full border-4 border-teal-500 shadow-l" 
           />
         </div>
+      </div>
+      </div>
+      
       </div>
     </section>
   );

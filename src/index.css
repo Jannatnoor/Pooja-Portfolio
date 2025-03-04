@@ -2,10 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Background Pattern */
+/* ========== ROOT VARIABLES ========== */
+:root {
+  /* Font Sizes */
+  --font-size-xs: 0.75rem;     /* 12px */
+  --font-size-sm: 0.875rem;    /* 14px */
+  --font-size-base: 1rem;      /* 16px */
+  --font-size-lg: 1.125rem;    /* 18px */
+  --font-size-xl: 1.25rem;     /* 20px */
+  --font-size-2xl: 1.5rem;     /* 24px */
+  --font-size-3xl: 1.875rem;   /* 30px */
+  --font-size-4xl: 2.25rem;    /* 36px */
+  
+  /* Spacing */
+  --section-padding-y: 4rem;
+
+  /* Carousel Variables */
+  --carousel-width: 2000px; /* Dynamic width */
+  --carousel-duration: 40s; /* Dynamic duration */
+}
+
+/* ========== BACKGROUND PATTERNS ========== */
 .bg-pattern {
   background-image: 
-    url("data:image/svg+xml,%3Csvg xmlns='https://www.canva.com/design?create&type=TAEvS8O20s8&template=EAGTNwcSKrI&category=tAEoFqaPb84&analyticsCorrelationId=297f4d65-a3fb-4e40-9975-09a3723c8270' width='400' height='400' viewBox='0 0 400 400'%3E%3Cpath d='M100 100 Q 150 50, 200 100 T 300 100' stroke='%23E2E8F0' fill='none' stroke-width='1'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Cpath d='M100 100 Q 150 50, 200 100 T 300 100' stroke='%23E2E8F0' fill='none' stroke-width='1'/%3E%3C/svg%3E"),
     linear-gradient(to right bottom, rgba(226, 232, 240, 0.1), rgba(226, 232, 240, 0.05));
   background-size: 400px 400px, cover;
   background-position: center;
@@ -14,26 +34,27 @@
 
 .dark .bg-pattern {
   background-image: 
-    url("data:image/svg+xml,%3Csvg xmlns='https://www.canva.com/design?create&type=TAEvS8O20s8&template=EAGTNwcSKrI&category=tAEoFqaPb84&analyticsCorrelationId=297f4d65-a3fb-4e40-9975-09a3723c8270' width='400' height='400' viewBox='0 0 400 400'%3E%3Cpath d='M100 100 Q 150 50, 200 100 T 300 100' stroke='%232D3748' fill='none' stroke-width='1'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Cpath d='M100 100 Q 150 50, 200 100 T 300 100' stroke='%232D3748' fill='none' stroke-width='1'/%3E%3C/svg%3E"),
     linear-gradient(to right bottom, rgba(45, 55, 72, 0.1), rgba(45, 55, 72, 0.05));
 }
 
-/* Section hover effects */
+/* ========== HOVER EFFECTS ========== */
 .section-hover {
-  @apply transition-all duration-300;
+  transition-property: all;
+  transition-duration: 300ms;
 }
 
 .section-hover:hover {
-  @apply transform scale-[1.02];
+  transform: scale(1.02);
 }
 
 .card-hover {
-  @apply transition-all duration-300;
+  transition-property: all;
+  transition-duration: 300ms;
 }
 
-/* Updated card hover with teal color */
 .card-hover:hover {
-  @apply transform scale-[1.01];
+  transform: scale(1.01);
   background-color: rgba(8, 139, 126, 0.1); /* Teal-600 with low opacity */
 }
 
@@ -41,82 +62,81 @@
   background-color: rgba(7, 94, 84, 0.15); /* Teal-500 with low opacity */
 }
 
-/* Base font sizes and responsive typography */
+/* ========== BASE TYPOGRAPHY ========== */
 @layer base {
   html {
-    font-size: 14px;
-  }
-  
-  @screen lg {
-    html {
-      font-size: 16px;
-    }
+    font-size: 16px !important;
   }
 
-  /* Dark mode styles */
   .dark {
-    /* Headings in dark mode */
     h1, h2, h3, h4, h5, h6 {
-      @apply text-white;
+      color: white;
     }
 
-    /* Regular text in dark mode */
     p, span {
-      @apply text-gray-300;
+      color: #d1d5db; /* text-gray-300 */
     }
   }
 
-  /* Default text sizes */
+  /* Fixed Font Sizes */
   h1 {
-    @apply text-xl sm:text-2xl md:text-3xl;
+    font-size: 2.25rem !important; /* 36px */
+    line-height: 1.2 !important;
   }
   
   h2 {
-    @apply text-lg sm:text-xl md:text-2xl;
+    font-size: 1.75rem !important; /* 28px */
+    line-height: 1.3 !important;
   }
-  
+
   h3 {
-    @apply text-base sm:text-lg md:text-xl;
+    font-size: 1.25rem !important; /* 20px */
+    line-height: 1.4 !important;
   }
   
   h4, h5, h6 {
-    @apply text-sm sm:text-base md:text-lg;
+    font-size: 1.125rem !important; /* 18px */
+    line-height: 1.5 !important;
   }
   
-  p, span {
-    @apply text-sm sm:text-base;
+  p, span, li {
+    font-size: 1rem !important; /* 16px */
+    line-height: 1.6 !important;
   }
 }
 
-/* Section Components */
+/* ========== SECTION COMPONENTS ========== */
 @layer components {
   .section-container {
-    @apply py-20; /* Increased padding for better section separation */
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 
   .section-content {
     max-width: 1100px; 
-    width: 80%; /* Use percentage instead of fixed px margins */
+    width: 92%;
     margin-left: auto;
     margin-right: auto;
-    padding: 0;
+    padding: 0 1rem;
   }
 
   .section-heading {
     position: relative;
     text-align: center;
     font-weight: bold;
-    font-size: 1.75rem;
-    margin-bottom: 2.5rem;
+    font-size: 1.75rem !important;
+    margin-bottom: 2rem !important;
     color: #14b8a6; /* Teal-500 */
     z-index: 10;
   }
 
   .card-container {
-    @apply rounded-lg p-6 transition-all duration-300;
+    border-radius: 0.5rem; /* rounded-lg */
+    padding: 1.5rem !important; /* p-6 */
+    transition-property: all;
+    transition-duration: 300ms;
   }
   
-  /* Card container hover with teal */
   .card-container:hover {
     transform: scale(1.01);
     background-color: rgba(11, 103, 96, 0.1); /* Light teal background */
@@ -127,7 +147,7 @@
   }
 }
 
-/* Layout and responsiveness */
+/* ========== LAYOUT & RESPONSIVENESS ========== */
 @layer utilities {
   html, body {
     min-width: 320px;
@@ -140,27 +160,25 @@
     min-height: 100vh;
   }
   
-  /* Fix for section overlapping issues */
+  /* Section Styling */
   section {
     position: relative;
     overflow-x: hidden;
     width: 100%;
-    padding: 6rem 0; /* Add consistent padding to all sections */
+    padding: 4rem 0 !important;
     margin: 0;
   }
   
-  /* Ensure headings don't overlap content */
   section h2 {
     position: relative;
     z-index: 10;
   }
   
-  /* Fix for screens smaller than laptop size */
+  /* Responsive Adjustments */
   @media (max-width: 1024px) {
     section {
-      min-height: auto !important; /* Override any min-height setting */
-      height: auto !important; /* Make sure height is auto */
-      padding: 5rem 0; /* Slightly reduced padding on smaller screens */
+      min-height: auto !important;
+      height: auto !important;
     }
     
     section > div {
@@ -170,66 +188,133 @@
     }
   }
   
-  /* Additional fixes for mobile */
+  @media (max-width: 768px) {
+    #headline {
+      flex-direction: column !important;
+    }
+    
+    #headline .w-1\/2 {
+      width: 100% !important;
+    }
+    
+    #headline .fixed.left-5 {
+      display: none;
+    }
+  }
+  
   @media (max-width: 640px) {
     .min-h-screen, .h-screen {
       min-height: auto !important;
       height: auto !important;
     }
-    
-    section {
-      padding: 4rem 0; /* Even less padding on mobile */
-    }
-  }
-  
-  /* Specifically for the Work.tsx and Projects.tsx components */
-  #work, #projects {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-  }
-  
-  #work .section-content, 
-  #projects .section-content {
-    max-width: 1100px;
-    width: 92%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  /* Project cards grid improvements */
-  #projects .grid {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 1.5rem;
-  }
-  
-  @media (min-width: 768px) {
-    #projects .grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  
-  /* Work Experience improvements */
-  #work .space-y-8 > div {
-    margin-bottom: 2rem;
-  }
-  
-  /* Override conflicting styles */
-  @media (max-width: 1024px) {
-    .h-screen, .min-h-screen {
-      height: auto !important;
-      min-height: auto !important;
-    }
   }
 }
 
-/* Smooth transitions */
+/* ========== CAROUSEL STYLES ========== */
+/* Carousel Animation */
+@keyframes carousel-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-1 * var(--carousel-width)));
+  }
+}
+
+.carousel-wrapper {
+  display: flex;
+  width: max-content;
+  animation: carousel-scroll var(--carousel-duration) linear infinite;
+}
+
+.carousel-wrapper .food-item {
+  will-change: transform;
+  animation: carousel-scroll var(--carousel-duration) linear infinite;
+}
+
+.carousel-wrapper .paused-item {
+  animation-play-state: paused !important;
+}
+
+.carousel-wrapper {
+  animation-play-state: running;
+}
+
+.food-item {
+  width: 280px !important;
+}
+
+/* ========== GLOBAL TRANSITIONS ========== */
 * {
-  @apply transition-colors duration-300;
+  transition-property: color, background-color, border-color;
+  transition-duration: 300ms;
 }
 
-/* Dark mode transitions */
 .dark * {
   transition-property: color, background-color, border-color;
   transition-duration: 300ms;
+}
+
+/* ========== SCROLLBAR UTILITIES ========== */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* ========== SPECIFIC COMPONENT FIXES ========== */
+#work, #projects, #food-business {
+  padding-top: 4rem !important;
+  padding-bottom: 4rem !important;
+}
+
+#work .section-content, 
+#projects .section-content,
+#food-business .section-content {
+  max-width: 1100px;
+  width: 92%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#projects .grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  #projects .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Typography Fixes */
+.section-heading {
+  color: #14b8a6 !important;
+  text-align: center;
+  width: 100%;
+}
+
+#projects .card-container h3,
+#work .card-container h3 {
+  font-size: 1.25rem !important;
+}
+
+#projects .card-container p.text-lg,
+#work .card-container p.text-lg {
+  font-size: 1.125rem !important;
+}
+
+#projects .card-container p,
+#work .card-container p,
+#work .card-container li {
+  font-size: 1rem !important;
+}
+
+#projects .card-container span {
+  font-size: 0.875rem !important;
 }
