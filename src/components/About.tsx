@@ -5,11 +5,13 @@ import { SectionProps } from '../types/Section.types';
 const About: React.FC<SectionProps> = ({ setActiveSection, darkMode }) => {
   return (
     <section
-      id="about"
-      className={`h-screen flex items-center justify-center ${darkMode ? 'bg-[#1a1f2e]' : 'bg-white'}`}
-      onMouseEnter={() => setActiveSection('about')}
-    >
-      <div className="section-content">
+  id="about"
+  className={`py-16 flex items-center justify-center ${darkMode ? 'bg-[#1a1f2e]' : 'bg-white'}`}
+  onMouseEnter={() => setActiveSection('about')}
+>
+
+
+      <div className="section-content max-w-3xl mx-auto px-4 text-center sm:text-left">
         <h2 className={`section-heading text-teal-500`}>
           About Me
         </h2>

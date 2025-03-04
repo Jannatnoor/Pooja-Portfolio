@@ -1,6 +1,5 @@
 import React from 'react';
 import { SectionProps } from '../types/Section.types';
-import profileImage from '../assets/image2.png';
 import {Mail, Linkedin, Facebook, Instagram, Twitter,} from 'lucide-react';
 
 const Headline: React.FC<SectionProps> = ({ setActiveSection, darkMode }) => {
@@ -82,7 +81,7 @@ const Headline: React.FC<SectionProps> = ({ setActiveSection, darkMode }) => {
            <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 mx-auto">
               
           <img 
-            src={profileImage} 
+            src="/assets/image.jpg" 
             alt="Profile" 
             className="relative z-10 w-full h-full object-cover rounded-full border-4 border-teal-500 shadow-l" 
           />

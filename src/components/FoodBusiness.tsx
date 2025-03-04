@@ -15,35 +15,35 @@ const FoodBusiness: React.FC<SectionProps> = ({ setActiveSection, darkMode }) =>
   const foodItems: FoodItem[] = [
     {
       name: "Chocolate Cake",  
-      image: "/src/assets/food1.jpg", // Replace with actual image paths
+      image: "/assets/food1.jpg", // Replace with actual image paths
     },
     {
       name: "Malai kulfi",
-      image: "/src/assets/food2.jpg",
+      image: "/assets/food2.jpg",
     },
     {
       name: "Grilled Chicken",    
-      image: "/src/assets/food3.jpg",
+      image: "/assets/food3.jpg",
     },
     {
       name: "Butter Chicken",
-      image: "/src/assets/food4.jpg",
+      image: " /assets/food4.jpg",
     },
     {
       name: "Feta Cheese Salad",
-      image: "/src/assets/food5.jpg",
+      image: " /assets/food5.jpg",
     },
     {
       name: "Yugurt Bowl with fruits",
-      image: "/src/assets/food6.jpg",
+      image: " /assets/food6.jpg",
     },
     {
       name: "Dum Biryani",
-      image: "/src/assets/food7.jpg",
+      image: " /assets/food7.jpg",
     },
     {
       name: "Cranberry Brie Bitest",
-      image: "/src/assets/food8.jpg",
+      image: " /assets/food8.jpg",
     },
   ];
   
