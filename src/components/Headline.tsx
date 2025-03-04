@@ -24,13 +24,13 @@ const Headline: React.FC<SectionProps> = ({ setActiveSection, darkMode }) => {
     <section
       id="headline"
       className="relative min-h-screen overflow-hidden"
-      onMouseEnter={() => setActiveSection('headline')}
+      onMouseEnter={() => setActiveSection("headline")}
     >
       {/* Green Background Section with Curve */}
-      <div 
+      <div
         className={`absolute top-0 right-0 w-1/2 h-full bg-teal-500 z-0`}
         style={{
-          clipPath: 'polygon(40% 0, 100% 0, 100% 100%, 0% 100%)'
+          clipPath: "polygon(40% 0, 100% 0, 100% 100%, 0% 100%)",
         }}
       />
 
@@ -46,7 +46,11 @@ const Headline: React.FC<SectionProps> = ({ setActiveSection, darkMode }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`p-2 rounded-full  transition-duration-300
-                  ${darkMode ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-teal-500'}`}
+                  ${
+                    darkMode
+                      ? "text-gray-400 hover:text-white"
+                      : "text-gray-600 hover:text-teal-500"
+                  }`}
               >
                 {social.icon}
               </a>
@@ -55,20 +59,38 @@ const Headline: React.FC<SectionProps> = ({ setActiveSection, darkMode }) => {
 
           {/* Main Content - Positioned like in the image */}
           <div className="ml-12">
-            <p className="text-teal-500 text-2xl font-bold mb-4">{personalInfo.greeting}</p>
-            <h1 className={`text-4xl sm:text-5xl font-bold mb-3 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+            <p className="text-teal-500 text-2xl font-bold mb-4">
+              {personalInfo.greeting}
+            </p>
+            <h1
+              className={`text-4xl sm:text-5xl font-bold mb-3 ${
+                darkMode ? "text-white" : "text-gray-900"
+              }`}
+            >
               {personalInfo.name}
             </h1>
-            <h2 className={`text-xl sm:text-2xl mb-6 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+            <h2
+              className={`text-xl sm:text-2xl mb-6 ${
+                darkMode ? "text-gray-300" : "text-gray-700"
+              }`}
+            >
               {personalInfo.role}
             </h2>
-            <p className={`max-w-md text-lg mb-8 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+            <p
+              className={`max-w-md text-lg mb-8 ${
+                darkMode ? "text-gray-400" : "text-gray-600"
+              }`}
+            >
               {personalInfo.bio}
             </p>
-            
-            <button 
+
+            <button
               className="bg-teal-500 hover:bg-teal-600 text-white px-8 py-3 rounded-md transition-colors duration-300"
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() =>
+                document
+                  .getElementById("contact")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
             >
               Hire Me
             </button>
@@ -76,19 +98,19 @@ const Headline: React.FC<SectionProps> = ({ setActiveSection, darkMode }) => {
         </div>
 
         {/* Right Side with Image */}
-        <div className="w-full md:w-1/2 flex items-center justify-center mt-10 md:mt-0 pb-10 md:pb-0">
-        <div className="w-full max-w-md lg:max-w-lg xl:max-w-xl">
-           <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 mx-auto">
-              
-          <img 
-            src="/assets/image.jpg" 
-            alt="Profile" 
-            className="relative z-10 w-full h-full object-cover rounded-full border-4 border-teal-500 shadow-l" 
-          />
+        <div className="w-full md:w-1/2 flex items-center justify-center relative">
+          <div className="relative w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96">
+            {/* Background Circle for better contrast */}
+            <div className="absolute inset-0 bg-white rounded-full shadow-lg scale-[1.15]"></div>
+
+            {/* Profile Image */}
+            <img
+              src="/assets/image.jpg"
+              alt="Profile"
+              className="relative z-10 w-full h-full object-contain rounded-full border-4 border-teal-500 shadow-xl"
+            />
+          </div>
         </div>
-      </div>
-      </div>
-      
       </div>
     </section>
   );

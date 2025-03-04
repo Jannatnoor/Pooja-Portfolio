@@ -19,7 +19,7 @@
 
   /* Carousel Variables */
   --carousel-width: 2000px; /* Dynamic width */
-  --carousel-duration: 40s; /* Dynamic duration */
+  --carousel-duration: 90s; /* Dynamic duration */
 }
 
 /* ========== BACKGROUND PATTERNS ========== */
@@ -208,6 +208,12 @@
       height: auto !important;
     }
   }
+}
+
+#skills {
+  padding-top: 4rem !important;
+  padding-bottom: 4rem !important;
+  height: auto !important;
 }
 
 /* ========== CAROUSEL STYLES ========== */

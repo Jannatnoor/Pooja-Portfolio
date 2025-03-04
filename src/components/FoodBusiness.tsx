@@ -58,6 +58,7 @@ const FoodBusiness: React.FC<SectionProps> = ({ setActiveSection, darkMode }) =>
       const itemsCount = foodItems.length;
       const carouselWidth = (itemWidth + gap) * itemsCount;
       
+      
       // Set CSS variables for animation
       document.documentElement.style.setProperty('--carousel-width', `${carouselWidth}px`);
       document.documentElement.style.setProperty('--carousel-duration', `${itemsCount * 5}s`); // 5s per item
@@ -74,7 +75,7 @@ const FoodBusiness: React.FC<SectionProps> = ({ setActiveSection, darkMode }) =>
       window.removeEventListener('resize', calculateCarouselWidth);
     };
   }, [foodItems.length]);
-
+  
   return (
     <section
       id="food-business"
