@@ -22,22 +22,6 @@
   --carousel-duration: 90s; /* Dynamic duration */
 }
 
-/* ========== BACKGROUND PATTERNS ========== */
-.bg-pattern {
-  background-image: 
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Cpath d='M100 100 Q 150 50, 200 100 T 300 100' stroke='%23E2E8F0' fill='none' stroke-width='1'/%3E%3C/svg%3E"),
-    linear-gradient(to right bottom, rgba(226, 232, 240, 0.1), rgba(226, 232, 240, 0.05));
-  background-size: 400px 400px, cover;
-  background-position: center;
-  background-repeat: repeat;
-}
-
-.dark .bg-pattern {
-  background-image: 
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Cpath d='M100 100 Q 150 50, 200 100 T 300 100' stroke='%232D3748' fill='none' stroke-width='1'/%3E%3C/svg%3E"),
-    linear-gradient(to right bottom, rgba(45, 55, 72, 0.1), rgba(45, 55, 72, 0.05));
-}
-
 /* ========== HOVER EFFECTS ========== */
 .section-hover {
   transition-property: all;
@@ -212,10 +196,21 @@
 
 #skills {
   padding-top: 4rem !important;
-  padding-bottom: 4rem !important;
+  padding-bottom: 100vh !important;
   height: auto !important;
 }
 
+#about {
+  padding-bottom: 100vh !important;
+}
+
+#work {
+  padding-bottom: 100vh !important;
+}
+
+#cuisine {
+  padding-bottom: 100vh !important;
+}
 /* ========== CAROUSEL STYLES ========== */
 /* Carousel Animation */
 @keyframes carousel-scroll {

@@ -102,12 +102,12 @@ const Headline: React.FC<SectionProps> = ({ setActiveSection, darkMode }) => {
           <div className="relative w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96">
             {/* Background Circle for better contrast */}
             <div className="absolute inset-0 bg-white rounded-full shadow-lg scale-[1.15]"></div>
-
+              
             {/* Profile Image */}
             <img
-              src="/assets/image.jpg"
+              src="/assets/image2.jpg"
               alt="Profile"
-              className="relative z-10 w-full h-full object-contain rounded-full border-4 border-teal-500 shadow-xl"
+              className="relative z-10 w-full h-full object-contain rounded-full"
             />
           </div>
         </div>
