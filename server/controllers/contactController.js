@@ -5,18 +5,12 @@ import nodemailer from "nodemailer";
 export const createEmailTemplate = (data) => {
   const { name, email, subject, message } = data;
 
-  // Get current timestamp for record-keeping
-  //   const timestamp = new Date().toISOString();
-
   return {
-    from: emailConfig.from,
+    from: `"${name} via Portfolio" <${process.env.EMAIL_FROM || email}>`,
     to: process.env.EMAIL_RECIPIENT || "your-email@example.com",
     subject: `${subject}`,
-    html: `
-            
-        <p style="white-space: pre-line;"> ${message}</p>
-
-        
+    html: `           
+        <p style="white-space: pre-line;"> ${message}</p>        
     `,
     // Include text version for email clients that don't support HTML
     text: `

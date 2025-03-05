@@ -196,16 +196,12 @@
 
 #skills {
   padding-top: 4rem !important;
-  padding-bottom: 100vh !important;
+  padding-bottom: 30vh !important;
   height: auto !important;
 }
 
 #about {
-  padding-bottom: 100vh !important;
-}
-
-#work {
-  padding-bottom: 100vh !important;
+  padding-bottom: 30vh !important;
 }
 
 #cuisine {
@@ -318,4 +314,63 @@
 
 #projects .card-container span {
   font-size: 0.875rem !important;
+}
+
+
+/* Add these to your index.css file */
+
+/* Mobile Optimization Styles */
+@media (max-width: 768px) {
+  /* Optimize headline section for mobile */
+  #headline {
+    overflow: hidden;
+    padding-top: 0;
+  }
+  
+  #headline .bg-teal-500 {
+    clip-path: none !important;
+  }
+  
+  /* Make sure text is readable on mobile */
+  #headline h1, 
+  #headline h2, 
+  #headline p {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Fix section padding on mobile */
+  section {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+  
+  /* Ensure cards are properly padded on mobile */
+  .card-container {
+    padding: 1rem !important;
+  }
+  
+  /* Adjust font sizes for mobile */
+  h1 {
+    font-size: 1.875rem !important; /* 30px */
+  }
+  
+  h2 {
+    font-size: 1.5rem !important; /* 24px */
+  }
+  
+  h3 {
+    font-size: 1.25rem !important; /* 20px */
+  }
+}
+
+/* Specific mobile fixes for headline section */
+@media (max-width: 640px) {
+  #headline {
+    min-height: 100vh !important;
+  }
+  
+  #headline .section-content {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
 }
