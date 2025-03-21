@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+// import ReCAPTCHA from 'react-google-recaptcha';
+
 import { SectionProps } from "../types/Section.types";
 import { FormData, FormErrors, SubmitStatus } from "../types/Contact.types";
-// import { Mail } from "lucide-react";
 
 const Contact: React.FC<SectionProps> = ({ setActiveSection, darkMode }) => {
   const [formData, setFormData] = useState<FormData>({
@@ -13,6 +14,7 @@ const Contact: React.FC<SectionProps> = ({ setActiveSection, darkMode }) => {
 
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitStatus, setSubmitStatus] = useState<SubmitStatus>({});
+  // const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
@@ -46,6 +48,9 @@ const Contact: React.FC<SectionProps> = ({ setActiveSection, darkMode }) => {
       return;
     }
 
+    // const captchaToken = await recaptchaRef.current?.executeAsync();
+    // recaptchaRef.current?.reset();
+
     try {
       // Show loading state
       setSubmitStatus({
@@ -63,6 +68,7 @@ const Contact: React.FC<SectionProps> = ({ setActiveSection, darkMode }) => {
         },
         body: JSON.stringify({
           ...formData,
+          // captchaToken,
           source: window.location.href, // Track where the form was submitted from
           timestamp: new Date().toISOString(), // Add timestamp for tracking
         }),
@@ -390,6 +396,11 @@ const Contact: React.FC<SectionProps> = ({ setActiveSection, darkMode }) => {
                   "Send Message"
                 )}
               </button>
+              {/* <ReCAPTCHA
+                ref={recaptchaRef}
+                size='invisible'
+                sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+              /> */}
             </form>
           )}
         </div>

@@ -2,11 +2,9 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import nodemailer from "nodemailer";
-// import { body, validationResult } from "express-validator";
 import rateLimit from "express-rate-limit";
 import { testEmailConfig } from "./config/email.config.js";
 import contactRouter from "./routes/contactRouter.js";
-//import { validateContact } from "./middleware/middleware.validatecontact.js";
 
 dotenv.config();
 
@@ -21,7 +19,6 @@ const limiter = rateLimit({
   legacyHeaders: false,
 });
 
-
 // Middleware
 app.use(cors());
 app.use(express.json());
@@ -32,13 +29,10 @@ app.get("/test", (req, res) => {
   });
 });
 
-
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: { user: process.env.EMAIL_USERNAME, pass: process.env.EMAIL_PASSWORD },
 });
-
-
 
 testEmailConfig().then((isConfigured) => {
   if (isConfigured) {
