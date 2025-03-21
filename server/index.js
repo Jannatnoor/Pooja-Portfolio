@@ -12,14 +12,13 @@ const port = process.env.PORT || 5000;
 const app = express();
 
 const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 5, // Limit each IP to 5 contact form submissions per 15 minutes
+  windowMs: 15 * 60 * 1000, 
+  max: 5,
   message: "Too many requests from this IP, please try again after 15 minutes",
   standardHeaders: true,
   legacyHeaders: false,
 });
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 

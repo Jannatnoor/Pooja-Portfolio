@@ -157,7 +157,6 @@ export const verifyContactSubmission = async (req, res) => {
       });
     }
 
-    console.log(submissionData);
 
     // Prepare final email to portfolio owner
     const finalMailOptions = {

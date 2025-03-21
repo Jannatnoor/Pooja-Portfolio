@@ -6,7 +6,7 @@ import {
   handleContactSubmission,
   verifyContactSubmission,
 } from "../controllers/contactController.js";
-// import { verifyCaptcha } from '../middleware/middleware.verifyCaptcha.js';
+
 
 const contactRouter = express.Router();
 
@@ -25,7 +25,6 @@ contactRouter.post(
   "/contact",
   contactLimiter, // Rate limiting
   validateContact, // Validate input
-  // verifyCaptcha,
   handleContactSubmission
 );
 
